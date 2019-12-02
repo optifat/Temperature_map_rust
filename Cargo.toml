@@ -1,0 +1,7 @@
+[package]
+name = "Temperature_map_rust"
+version = "0.1.0"
+authors = ["optifat <pavsmel@mail.ru>"]
+edition = "2018"
+
+[dependencies]
