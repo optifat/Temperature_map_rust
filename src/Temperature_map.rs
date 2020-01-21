@@ -27,6 +27,7 @@ impl Temperature_map{
 
     pub fn integrate(self, x: f64, y: f64, z: f64) -> f64{
         let mut integral: f64 = 0.0;
+        let value: f64 = self.absorb*self.p/(std::f64::consts::PI*self.k/self.D*(4.0*std::f64::consts::PI*self.D).powf(0.5));
         for t in 1..10000 {
             let t = f64::from(t);
 
@@ -37,8 +38,8 @@ impl Temperature_map{
             let result = std::f64::consts::E.powf(-power);
             //println!("{}", result);
 
-            integral += result * self.dt/(t*self.dt).powf(0.5)/(2.0*self.D*t*self.dt + self.a.powf(2.0)) *
-            self.absorb*self.p/(std::f64::consts::PI*self.k/self.D*(4.0*std::f64::consts::PI*self.D).powf(0.5));
+            integral += result * self.dt/(t*self.dt).powf(0.5)/(2.0*self.D*t*self.dt + self.a.powf(2.0)) * value;
+            
         }
         //println!("{}", integral);
         return integral
