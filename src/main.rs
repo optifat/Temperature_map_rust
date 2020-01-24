@@ -9,11 +9,11 @@ fn main(){
     let Nz = 150;
     let absorb = 0.25;
     let D: f64 = 5.0*10.0_f64.powf(-6.0_f64);
-    let k: f64 = 24.0;
+    let k: f64 = 26.0;
     let Tm = 1563;
     let size: f64 = 50.0*10.0_f64.powf(-6.0_f64);
     let v = 0.8;
-    let T0 = 293;
+    let T0 = 300;
 
     let A = Temperature_map::Temperature_map::new(dr, dt, Nx, Ny, Nz, absorb, D, k, Tm, p, size, v, T0);
 

@@ -42,11 +42,12 @@ impl Temperature_map{
             let result = std::f64::consts::E.powf(-power);
             //println!("{}", result);
 
-            integral += result * self.dt/time.powf(0.5)*divider;
+            integral += result * self.dt/time.powf(0.5) * divider;
             
         }
         //println!("{}", integral);
         integral *= self.factor;
+        
         return integral
     }
 }
